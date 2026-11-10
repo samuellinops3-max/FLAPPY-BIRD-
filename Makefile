@@ -11,7 +11,7 @@ SFOXML    := sfo.xml
 MACHDEP := -mhard-float -fmodulo-sched -ffunction-sections -fdata-sections
 CFLAGS  := -O2 -Wall -mcpu=cell $(MACHDEP) -I$(PSL1GHT)/ppu/include
 LDFLAGS := $(MACHDEP) -L$(PSL1GHT)/ppu/lib
-LIBS    := -lrsx -lgcm_sys -lio -lsysutil -lrt -llv2 -lm -laudio
+LIBS    := -lrsx -lgcm_sys -lio -lsysutil -lrt -llv2 -lm
 all: $(TARGET).pkg
 main.o: main.c; $(CC) $(CFLAGS) -c $< -o $@
 $(TARGET).elf: main.o; $(CC) $(LDFLAGS) -o $@ $< $(LIBS)
